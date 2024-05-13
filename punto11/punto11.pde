@@ -17,5 +17,14 @@ void setup(){
 }
 
 void draw(){
+  background(255);
   
+  player.position.x = mouseX;
+  player.position.y = mouseY;
+  player.display();
+  enemy.display();
+  
+  line(enemy.position.x+30, enemy.position.y, player.position.x, player.position.y);
+
+  enemy.disparar();
 }
