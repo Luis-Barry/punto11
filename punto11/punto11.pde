@@ -18,6 +18,8 @@ void setup(){
 
 void draw(){
   background(255);
+  //angulo de vision enemigo
+  arc(width/2+30, height/2, width, height, -PI/6, PI/6);
   
   player.position.x = mouseX;
   player.position.y = mouseY;
@@ -26,5 +28,6 @@ void draw(){
   
   line(enemy.position.x+30, enemy.position.y, player.position.x, player.position.y);
 
+  enemy.detectarPlayer(player);
   enemy.disparar();
 }

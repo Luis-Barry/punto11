@@ -8,11 +8,17 @@ class Enemigo extends Player{
     this.vision = vision;
     this.fireballImage = fireballImage;
   }
- 
+  
+  public void detectarPlayer(Player target) {
+    this.target = target;
+  }
+  
   public void disparar() {
-    float angle = degrees(PVector.angleBetween(new PVector(1, 0), PVector.sub(target.position, position)));
-    if (angle < vision/1.5) {
-      image(fireballImage, position.x + 50, position.y);
+    if (target != null) {
+      float angle = degrees(PVector.angleBetween(new PVector(1, 0), PVector.sub(target.position, position)));
+      if (angle < vision/1.5) {
+        image(fireballImage, position.x + 50, position.y);
+      }
     }
   }
 }
